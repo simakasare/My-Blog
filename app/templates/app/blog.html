@@ -1,0 +1,44 @@
+{% extends "app/base.html"   %}
+{% block title %}
+<title>BLOG</title>
+
+{% endblock title %}
+
+{% block body %}
+
+<div>
+  {% for message in messages %}
+  <h3>{{ message }}</h3>
+  {% endfor %}
+</div>
+
+
+<div class="container">
+
+</div>
+
+<h3 class="text-center">My New Blog Here</h3>
+
+<form action="blog" method="post">
+  {% csrf_token %}
+
+  <div class="form-group">
+    <label for="exampleFormControlInput1">User_Id</label>
+    <input type="text" class="form-control" id="user_id" name="user_id" placeholder="user_id">
+  </div>
+
+  <div class="form-group">
+    <label for="exampleFormControlInput1">Title</label>
+    <input type="text" class="form-control" id="title" name="title" placeholder="title">
+  </div>
+  
+  <div class="form-group">
+    <label for="exampleFormControlTextarea1">Content</label>
+    <textarea class="form-control" id="exampleFormControlTextarea1" name="content" rows="3"></textarea>
+  </div>
+ <input type="submit" value="post" class="btn btn-primary">
+</form>
+</div>
+
+
+  {%  endblock   %}

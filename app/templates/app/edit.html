@@ -1,0 +1,18 @@
+{% extends "app/base.html"   %}
+{% block title %}
+<title>Edit</title>
+
+{% endblock title %}
+
+{% block body %}
+
+    <center><h2>Edit Blog</h2></center>
+    <form action="" method="POST">
+        {% csrf_token %}
+
+    {{form.as_p}}
+    <input type="submit" value="update">
+    </form>
+
+
+    {%  endblock   %}
